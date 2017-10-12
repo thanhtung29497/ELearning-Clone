@@ -1,0 +1,28 @@
+{
+  "name": "elearning",
+  "version": "1.0.0",
+  "description": "website contains online courses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thanhtung29497/Project-2.git"
+  },
+  "author": "Tung Tran Thanh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thanhtung29497/Project-2/issues"
+  },
+  "homepage": "https://github.com/thanhtung29497/Project-2#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-typescript": "^3.2.2",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "run-sequence": "^2.2.0",
+    "typescript": "^2.5.3"
+  }
+}
