@@ -1,25 +1,22 @@
 {
-    "compilerOptions": {
-      "outDir": "dist/tsc",
-      "target": "es6",
-      "module": "amd",
-      "sourceMap": true,
-      "jsx": "react",
-      "experimentalDecorators": true,
-      "skipLibCheck": true,
-      "strictNullChecks": true,
-      "noUnusedLocals": true,
-      "noUnusedParameters": true,
-      "lib": [
-        "es2015",
-        "dom"
-      ]
-    },
-    "include": [
-      "src/**/*.ts"
-    ],
-    "exclude": [
-      "node_modules",
-      ".npm"
-    ]
+  "compilerOptions": {
+    "outDir": "dist/src",
+    "target": "es6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": [
+    "src/ts/**/*.tsx",
+    "src/ts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    ".npm"
+  ]
 }
