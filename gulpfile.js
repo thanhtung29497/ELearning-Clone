@@ -3,8 +3,9 @@ const ts = require("gulp-typescript");
 const clean = require("gulp-clean");
 const runSequence = require("run-sequence");
 const gulpWebpack = require("gulp-webpack");
-const nodeExternals = require('webpack-node-externals');
 const webpack = require("webpack");
+const zip = require("gulp-zip");
+const merge = require("merge2");
 
 var tsCode = ts.createProject("tsconfig.json");
 
@@ -19,9 +20,17 @@ gulp.task('cleanDist', () => {
         .pipe(clean());
 })
 
-gulp.task('copyHTML', () => {
-    return gulp.src("./src/html/*.html")
-        .pipe(gulp.dest("./dist/src"))
+gulp.task('copyHtmlAndCss', () => {
+    return merge([
+        gulp.src("./src/index.html")
+            .pipe(gulp.dest("./dist/src")),
+        gulp.src("./src/html/*.html")
+            .pipe(gulp.dest("./dist/src/html")),
+        gulp.src("./src/css/*.css")
+            .pipe(gulp.dest("./dist/src/css")),
+        gulp.src("./src/resources/**/*")
+            .pipe(gulp.dest("./dist/src/resources"))
+    ])
 })
 
 gulp.task('bundle', () => {
@@ -31,12 +40,23 @@ gulp.task('bundle', () => {
                 filename: "dist/src/js/main.js",
             },
             entry: "./dist/src/js/main/main.js",
+            devtool: "source-map"
             // target: 'node',
             // externals: [nodeExternals()],
         }, webpack))
         .pipe(gulp.dest("./"))
 })
 
+gulp.task('zip', () => {
+    return gulp.src('./dist/src/**')
+        .pipe(zip('web.zip'))
+        .pipe(gulp.dest('./dist'))
+})
+
 gulp.task('default', (callback) => {
-    runSequence('cleanDist', ['compile', 'copyHTML'], ['bundle'], callback);
+    runSequence('cleanDist', ['compile', 'copyHtmlAndCss'], ['bundle'], callback);
+})
+
+gulp.task('production', (callback) => {
+    runSequence('cleanDist', ['compile', 'copyHtmlAndCss'], ['bundle'], ['zip'], callback);
 })

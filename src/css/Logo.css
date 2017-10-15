@@ -1,0 +1,32 @@
+.logo-container {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.logo {
+    background-image: url(../resources/images/logo/hust.jpg);
+    background-size: 100% 100%;
+    margin-right: 5px;
+    width: 30px;
+    height: 40px;
+    display: inline-block;
+}
+
+.logo-title {
+    font-family: cursive;
+    display: inline-block;
+}
+
+.logo-title .large {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.logo-title .small {
+    font-size: 10px;
+}
+
