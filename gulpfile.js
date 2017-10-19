@@ -6,6 +6,7 @@ const gulpWebpack = require("gulp-webpack");
 const webpack = require("webpack");
 const zip = require("gulp-zip");
 const merge = require("merge2");
+const browserSync = require("browser-sync");
 
 var tsCode = ts.createProject("tsconfig.json");
 
@@ -41,20 +42,37 @@ gulp.task('bundle', () => {
             },
             entry: "./dist/src/js/main/main.js",
             devtool: "source-map"
-            // target: 'node',
-            // externals: [nodeExternals()],
         }, webpack))
         .pipe(gulp.dest("./"))
 })
 
 gulp.task('zip', () => {
     return gulp.src('./dist/src/**')
-        .pipe(zip('web.zip'))
+        .pipe(zip('public_html.zip'))
         .pipe(gulp.dest('./dist'))
 })
 
+gulp.task('watch', (callback) => {
+    return gulp.watch('./src/**/*', () => {
+        runSequence('cleanDist', ['compile', 'copyHtmlAndCss'], ['bundle'], ['reloadServer'], callback);
+    })
+})
+
+gulp.task('reloadServer', () => {
+    return browserSync.reload();
+})
+
+gulp.task('startServer', () => {
+    return browserSync({
+        notify: false,
+        server: {
+            baseDir: './dist/src/'
+        }
+    });
+})
+
 gulp.task('default', (callback) => {
-    runSequence('cleanDist', ['compile', 'copyHtmlAndCss'], ['bundle'], callback);
+    runSequence('cleanDist', ['compile', 'copyHtmlAndCss'], ['bundle'], ['startServer', 'watch'], callback);
 })
 
 gulp.task('production', (callback) => {

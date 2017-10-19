@@ -1,0 +1,52 @@
+@media only screen and (max-width: 850px) {
+
+    .header-panel {
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .header-panel .right-align {
+        justify-content: center;
+        height: 40%;
+    }
+
+    .header-panel .logo {
+        width: 33px;
+        height: 50px;
+    }
+
+    .header-panel.fixed .logo-container {
+        display: none;
+    }
+
+    .header-panel.fixed .right-align {
+        height: 100%;
+    }
+
+    .testimonials-panel .wrapper {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .header-panel .menu-button {
+        display: flex;
+    }
+
+    .header-panel .right-align {
+        display: none;
+    }
+
+    .header-panel {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .header-panel.fixed .logo-container{
+        display: flex;
+    }
+
+    .header-panel .menu {
+        visibility: visible;
+    }
+}

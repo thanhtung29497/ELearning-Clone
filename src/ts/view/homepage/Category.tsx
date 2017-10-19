@@ -9,7 +9,8 @@ export class Categories extends React.Component<{}, {}> {
 }
 
 export const Category = (props: { name: string, onClick?: () => void, active?: boolean }) => {
-    return <button className={"category" + (props.active ? " active" : "")} onClick={props.onClick}>
+    return <div className={"category" + (props.active ? " active" : "")} onClick={props.onClick}>
+        <div className="glyphicon glyphicon-hand-right category-icon" />
         {props.name}
-    </button>
+    </div>
 }

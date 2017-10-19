@@ -1,54 +1,52 @@
 import React = require("react");
-import { NavigationBar, NavigationItem, NavigationRightSection } from "../components/navigation";
 import { Categories, Category } from "./Category";
-import { Misson, CoverPanel } from "./CoverPanel";
-import { Logo } from "../components/logo/Logo";
-import { SearchBar } from "../components/search/SearchBar";
+import { Introduction, CoverPanel } from "./CoverPanel";
+import { HeaderPanel } from "./HeaderPanel";
 import { WhySelectItem, WhySelectPanel } from "./WhySelectPanel";
 import { FeedbackPanel } from "./FeedbackPanel";
+import { config } from "../../config/homepage";
+import { NavigationBar, NavigationItem, NavigationRightSection } from "../components/navigation";
+import { Logo } from "../components/logo/Logo";
+import { SearchBar } from "../components/search/SearchBar";
+import { MenuButton } from "../components/button/MenuButton";
+import { MenuItem } from "../components/menu/Menu";
 
 export default class HomePage extends React.Component<{}, {}> {
+
     render() {
         return <div>
-            <NavigationBar className="header dark">
+            <HeaderPanel scrollTopToChange={0}>
                 <Logo />
+                <MenuButton >
+                    <MenuItem title={config.menu.home} />
+                    <MenuItem title={config.menu.courses} />
+                    <MenuItem title={config.menu.purchase} />
+                    <MenuItem title={config.menu.feedback} />
+                </MenuButton>
                 <NavigationRightSection>
                     <SearchBar />
-                    <NavigationItem title="Home" active={true} />
-                    <NavigationItem title="Courses" />
-                    <NavigationItem title="Purchase" />
-                    <NavigationItem title="Feedback" />
+                    <NavigationBar>
+                        <NavigationItem title={config.menu.home} />
+                        <NavigationItem title={config.menu.courses} path="/courses" />
+                        <NavigationItem title={config.menu.purchase} />
+                        <NavigationItem title={config.menu.feedback} />
+                    </NavigationBar>
                 </NavigationRightSection>
-            </NavigationBar>
+            </HeaderPanel>
             <div className="main">
                 <CoverPanel >
-                    <Misson text="Change the way you learn." smallText="Easier. More effective. More Interactive." />
-                    <Categories>
-                        <Category name="Foreign Language" />
-                        <Category name="Information & Technology" />
-                        <Category name="Electronics & Telecommunications" />
-                    </Categories>
+                    <Introduction text={config.introduction.large} smallText={config.introduction.small}>
+                        <Categories>
+                            {config.categories.map(category => <Category key={category} name={category} />)}
+                        </Categories>
+                    </Introduction>
                 </CoverPanel>
-                <NavigationBar className="center underlined">
-                    <NavigationItem title="Hot courses" active={true} />
-                    <NavigationItem title="New courses" />
-                    <NavigationItem title="Free courses" />
-                </NavigationBar>
-                <WhySelectPanel title="Tại sao nên chọn chúng tôi">
-                    <WhySelectItem image="resources/images/homepage/effectiveness.png"
-                        title="Tính hiệu quả"
-                        description="Cá nhân hóa nội dung và kết quả theo trình độ và kết quả người dùng" />
-                    <WhySelectItem image="resources/images/homepage/quality.png"
-                        title="Chất lượng"
-                        description="Giảng viên là các chuyên gia giàu kinh nghiệm, vững vàng về chuyên môn" />
-                    <WhySelectItem image="resources/images/homepage/convenience.png"
-                        title="Tính tiện lợi"
-                        description="Học mọi lúc mọi nơi trên Web và trên di động (Android, iOs)" />
-                    <WhySelectItem image="resources/images/homepage/interactiveness.png"
-                        title="Tính tương tác"
-                        description="Trò chuyện, trao đổi trực tuyến giữa các học viên và với giảng viên" />
+                <WhySelectPanel>
+                    {config.features.map(feature => {
+                        return <WhySelectItem {...feature} key={feature.title} />
+                    })}
                 </WhySelectPanel>
-                <FeedbackPanel />
+                <FeedbackPanel {...config.testimonials} />
             </div>
 
         </div >

@@ -1,0 +1,21 @@
+.menu-button {
+    width: 45px;
+    height: 40px;
+    background: #ccc;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 70px;
+    cursor: pointer;
+}
+
+.menu-button:hover, .menu-button.open{
+    background: #727272;
+}
+
+.menu-button .button-bar {
+    height: 4px;
+    background: white;
+    width: 70%;
+    margin: 3px auto;
+}
