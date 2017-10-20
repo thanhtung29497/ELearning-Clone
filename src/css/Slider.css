@@ -1,0 +1,27 @@
+.main .slick-slider {
+    width: 100%;
+}
+
+.main .slick-slider .slick-track {
+    display: flex!important;
+}
+
+.main .slick-next {
+    right: -40px;
+}
+
+.main .slick-prev {
+    left: -40px;
+}
+
+.main .slick-next, .slick-prev {
+    height: auto;
+    width: auto;
+    line-height: 0;
+} 
+
+.main .slick-prev:before, .main .slick-next:before {
+    font-size: 50px;
+    line-height: 0;
+    color: #ddd;
+}

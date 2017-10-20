@@ -10,6 +10,8 @@ import { Logo } from "../components/logo/Logo";
 import { SearchBar } from "../components/search/SearchBar";
 import { MenuButton } from "../components/button/MenuButton";
 import { MenuItem } from "../components/menu/Menu";
+import { CoursePanel } from "./CoursePanel";
+import { courses } from "../../data/course";
 
 export default class HomePage extends React.Component<{}, {}> {
 
@@ -46,6 +48,9 @@ export default class HomePage extends React.Component<{}, {}> {
                         return <WhySelectItem {...feature} key={feature.title} />
                     })}
                 </WhySelectPanel>
+                <CoursePanel courses={courses} title="Popular courses" />
+                <CoursePanel courses={courses} title="New courses" />
+                <CoursePanel courses={courses} title="Free courses" />
                 <FeedbackPanel {...config.testimonials} />
             </div>
 

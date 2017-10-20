@@ -1,0 +1,81 @@
+.course {
+    width: 320px;
+    height: 380px;
+    display: inline-flex;
+    flex-direction: column;
+    cursor: pointer;
+    font-family: "Montserrat";
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.15);
+    transition: box-shadow .25s ease-in;
+    margin: 20px;
+}
+
+.course:hover {
+    box-shadow: -2px 8px 22px 0 rgba(0,0,0,0.15);
+}
+
+.course .avatar {
+    width: 100%;
+    height: 170px;
+}
+
+.course .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.course .content {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.course .content .name {
+    color: #212121;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 21px;
+    font-weight: bold;
+    height: 42px;
+}
+
+.course .content .badget {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0 15px;
+}
+
+.course .badget .cost {
+    color: #74BC60;
+    font-weight: bold;
+    height: 20px;
+}
+
+.course .badget .num-attendant {
+    margin: 0 20px;
+}
+
+.course .badget .num-attendant .image {
+    margin-right: 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.course .badget .num-attendant .number {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.star-rating {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.star-rating i {
+    color: #F6B05B;
+}
