@@ -2,13 +2,27 @@ body {
     font-family: "Raleway";
 }
 
-.main {
+body a {
+    text-decoration: none!important;
+    outline: none!important;
+    color: inherit;
+}
+
+body a:hover {
+    color: inherit;
+}
+
+body a:visited {
+    color: inherit;
+}
+
+.home-page .main {
     font-size: 14px;
     transform: translateY(100px);
 }
 
 .header-panel {
-    position: fixed;
+    position: absolute;
     font-size: 14px;
     display: flex;
     align-items: center;
@@ -23,7 +37,7 @@ body {
 
 .header-panel.fixed {
     position: fixed;
-    height: 65px;
+    height: 65px!important;
 }
 
 .header-panel.fixed .logo{

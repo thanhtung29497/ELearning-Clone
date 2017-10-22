@@ -38,8 +38,6 @@ body {
 }
 
 .nav-bar .nav-item a {
-    text-decoration: none!important;
-    outline: none!important;
     color: inherit;
 }
 
@@ -71,3 +69,221 @@ body {
     justify-content: flex-end;
     align-items: center;
 }
+
+.side-bar {
+    width: 320px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    background: #272634;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.5s;
+    white-space: nowrap;
+}
+
+.side-bar > .avatar {
+    height: 65px;
+    background: rgba(0,0,0,.22);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.side-bar .switch-button {
+    color: rgba(255,255,255,.7);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -14px;
+    height: 28px;
+    line-height: 28px;
+    width: 28px;
+    font-size: 17px;
+    text-align: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.side-bar .switch-button:hover {
+    color: rgba(255,255,255,.85);
+    background: rgba(255,255,255,.1);
+}
+
+.side-bar .content {
+    height: 100%;
+    padding: 5px 20px;
+    margin-top: 65px;
+    overflow: auto;
+}
+
+.side-bar .content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.side-bar .content::-webkit-scrollbar-thumb {
+    opacity: 0.4;
+    background: rgba(155, 164, 169, 0.68);
+    border-radius: 10px;
+}
+
+.side-bar .group {
+    width: 100%;
+}
+
+.side-bar .group > .title {
+    width: 100%;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    font-size: 12px;
+    padding: 5px 0;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.side-bar .item {
+    width: 100%;
+    margin: 8px 0;
+    line-height: 32px;
+    color: #858598;
+    font-family: "Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.side-bar .item .header {
+    height: 32px;
+    cursor: pointer;
+    position: relative;
+}
+
+.side-bar .item .header:hover {
+    color: #C9C7EF;
+}
+
+.side-bar .item .title {
+    display: inline-block;
+    font-size: 14px;
+}
+
+.side-bar .item .header .icon {
+    background: rgba(0,0,0,.31);
+    opacity: .6;
+    font-size: 16px;
+    line-height: 31px;
+    display: block;
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    margin-left: 0;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.side-bar .item .header .arrow {
+    justify-content: center;
+    font-size: 19px;
+    line-height: 100%;
+    position: absolute;
+    display: inline-flex;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    align-items: center;
+    -webkit-transition-duration: .25s;
+    -moz-transition-duration: .25s;
+    -o-transition-duration: .25s;
+    transition-duration: .25s;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+}
+
+.side-bar .item .header .arrow.rotate {
+    transform: rotate(90deg);
+}
+
+.side-bar .group > .title.link:hover {
+    color: #C9C7EF;
+}
+
+.side-bar .group .title .icon {
+    display: inline-block;
+    margin: 0 10px 0 3px;
+}
+
+.side-bar .item .sub-items {
+    margin: 15px -20px 0 -20px;
+    padding: 10px 0;
+    background: rgba(0,0,0,.31);
+    display: none;
+}
+
+.side-bar .item .sub-items.expand {
+    display: block;
+}
+
+.side-bar .section {
+    padding: 0 20px;
+    height: 32px;
+}
+
+.side-bar .section:hover {
+    background: rgba(0,0,0,.2);
+    color: #C9C7EF;
+    cursor: pointer;
+}
+
+.side-bar .section .icon {
+    display: inline-block;
+    margin: 0 17px;
+    width: 10px;
+    font-size: 12px;
+}
+
+.side-bar.collapse {
+    width: 65px;
+    display: flex;
+}
+
+.side-bar.collapse .avatar{
+    justify-content: center;
+}
+
+.side-bar.collapse .avatar a {
+    display: none;
+}
+
+.side-bar.collapse .avatar .switch-button {
+    position: relative;
+    top: 0;
+    margin: 0;
+    right: 0;
+}
+
+.side-bar.collapse .content {
+    padding: 0;
+    text-align: center;
+}
+
+.side-bar.collapse .group-avatar {
+    color: rgba(255,255,255,.5);
+    font-size: 20px;
+    background: rgba(0,0,0,.31);
+    opacity: .6;
+    line-height: 46px;
+    width: 46px;
+    height: 46px;
+    border-radius: 3px;
+    margin: 10px auto;
+}
+
+.side-bar.collapse .group-avatar.link {
+    cursor: pointer;
+}
+
+.side-bar .group-avatar.link:hover {
+    color: #fff;
+}
+

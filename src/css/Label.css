@@ -1,0 +1,22 @@
+.tag {
+    margin: 0 10px 5px;
+    display: inline-block;
+    height: 30px;
+    background: #272634;
+    line-height: 30px;
+    padding: 0 9px;
+    color: rgba(255,255,255,0.8);
+    border-radius: 40px;
+    cursor: pointer;
+    border: 1px solid #272634;
+    box-sizing: content-box;
+}
+
+.tag:hover {
+    background: #fff;
+    color: #272634;
+}
+
+.tag .tag-title {
+    margin-left: 5px;
+}

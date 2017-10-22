@@ -1,7 +1,7 @@
 import React = require("react");
 import { Categories, Category } from "./Category";
 import { Introduction, CoverPanel } from "./CoverPanel";
-import { HeaderPanel } from "./HeaderPanel";
+import { HeaderPanel } from "../components/header/HeaderPanel";
 import { WhySelectItem, WhySelectPanel } from "./WhySelectPanel";
 import { FeedbackPanel } from "./FeedbackPanel";
 import { config } from "../../config/homepage";
@@ -16,8 +16,8 @@ import { courses } from "../../data/course";
 export default class HomePage extends React.Component<{}, {}> {
 
     render() {
-        return <div>
-            <HeaderPanel scrollTopToChange={0}>
+        return <div className="home-page">
+            <HeaderPanel height={100} scrollTopToChange={0}>
                 <Logo />
                 <MenuButton >
                     <MenuItem title={config.menu.home} />

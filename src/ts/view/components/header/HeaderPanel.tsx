@@ -1,6 +1,6 @@
 import React = require("react");
 
-export class HeaderPanel extends React.Component<{ scrollTopToChange?: number }, { optionalClass: string }> {
+export class HeaderPanel extends React.Component<{ height?: number; scrollTopToChange?: number }, { optionalClass: string }> {
 
     constructor() {
         super();
@@ -25,7 +25,7 @@ export class HeaderPanel extends React.Component<{ scrollTopToChange?: number },
 
 
     render() {
-        return <header className={"header-panel " + this.state.optionalClass}>
+        return <header className={"header-panel " + this.state.optionalClass} style={{ height: this.props.height }}>
             {this.props.children}
         </header >
     }

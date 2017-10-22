@@ -31,3 +31,16 @@
     font-size: 10px;
 }
 
+.logo-container.dark .logo{
+    width: 33px;
+    height: 50px;
+}
+
+.logo-container.dark .logo-title {
+    color: rgba(255,255,255,.5);
+}
+
+.logo-container.dark .logo {
+    opacity: 0.6;
+}
+

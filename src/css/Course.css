@@ -8,6 +8,7 @@
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.15);
     transition: box-shadow .25s ease-in;
     margin: 20px;
+    white-space: nowrap;
 }
 
 .course:hover {
@@ -39,6 +40,7 @@
     line-height: 21px;
     font-weight: bold;
     height: 42px;
+    white-space: normal;
 }
 
 .course .content .badget {
@@ -69,6 +71,10 @@
 .course .badget .num-attendant .number {
     font-weight: bold;
     font-size: 14px;
+}
+
+.course .content .description {
+    white-space: normal;
 }
 
 .star-rating {
