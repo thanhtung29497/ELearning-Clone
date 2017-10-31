@@ -20,18 +20,12 @@ export default class HomePage extends React.Component<{}, {}> {
             <HeaderPanel height={100} scrollTopToChange={0}>
                 <Logo />
                 <MenuButton >
-                    <MenuItem title={config.menu.home} />
-                    <MenuItem title={config.menu.courses} />
-                    <MenuItem title={config.menu.purchase} />
-                    <MenuItem title={config.menu.feedback} />
+                    {config.menu.map(item => <MenuItem key={item.title} {...item} />)}
                 </MenuButton>
                 <NavigationRightSection>
                     <SearchBar />
                     <NavigationBar>
-                        <NavigationItem title={config.menu.home} />
-                        <NavigationItem title={config.menu.courses} path="/courses" />
-                        <NavigationItem title={config.menu.purchase} />
-                        <NavigationItem title={config.menu.feedback} />
+                        {config.menu.map(item => <NavigationItem key={item.title} {...item} />)}
                     </NavigationBar>
                 </NavigationRightSection>
             </HeaderPanel>
@@ -39,7 +33,7 @@ export default class HomePage extends React.Component<{}, {}> {
                 <CoverPanel >
                     <Introduction text={config.introduction.large} smallText={config.introduction.small}>
                         <Categories>
-                            {config.categories.map(category => <Category key={category} name={category} />)}
+                            {config.categories.map(category => <Category key={category.path} {...category} />)}
                         </Categories>
                     </Introduction>
                 </CoverPanel>

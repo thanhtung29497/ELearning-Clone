@@ -1,8 +1,9 @@
 export interface INavigationBase {
     avatar?: Element;
     title: string;
-    link?: string;
+    path?: string;
     icon?: string;
+    active?: boolean;
 }
 
 export interface INavigation {
@@ -11,6 +12,7 @@ export interface INavigation {
     width?: number;
     avatar?: JSX.Element;
     groups: INavigationGroup[];
+    path?: INavigationLink;
 }
 
 export interface INavigationGroup extends INavigationBase {
@@ -18,9 +20,16 @@ export interface INavigationGroup extends INavigationBase {
 }
 
 export interface INavigationItem extends INavigationBase {
+    onClick?: (path: INavigationLink) => void;
     sections?: INavigationSection[];
 }
 
 export interface INavigationSection extends INavigationBase {
-    badget?: string;
+    badges?: string;
+}
+
+export interface INavigationLink {
+    group: string;
+    item?: string;
+    section?: string;
 }

@@ -43,7 +43,7 @@
     white-space: normal;
 }
 
-.course .content .badget {
+.course .content .badges {
     width: 100%;
     height: 30px;
     display: flex;
@@ -52,23 +52,23 @@
     margin: 10px 0 15px;
 }
 
-.course .badget .cost {
+.course .badges .cost {
     color: #74BC60;
     font-weight: bold;
     height: 20px;
 }
 
-.course .badget .num-attendant {
+.course .badges .num-attendant {
     margin: 0 20px;
 }
 
-.course .badget .num-attendant .image {
+.course .badges .num-attendant .image {
     margin-right: 5px;
     height: 25px;
     width: 25px;
 }
 
-.course .badget .num-attendant .number {
+.course .badges .num-attendant .number {
     font-weight: bold;
     font-size: 14px;
 }
@@ -84,4 +84,75 @@
 
 .star-rating i {
     color: #F6B05B;
+}
+
+.vertical-course {
+    width: 100%;
+    height: 160px;
+    position: relative;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.vertical-course:hover {
+    background-color: #f4f4f4;
+}
+
+.vertical-course .avatar {
+    height: 100%;
+    width: 300px;
+}
+
+.vertical-course .avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.vertical-course .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+    font-family: "Montserrat";
+}
+
+.vertical-course .content .name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.vertical-course .content .description {
+    font-size: 14px;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+.vertical-course .content .badges {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vertical-course .content .num-attendant {
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.vertical-course .content .num-attendant img {
+    margin-right: 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.vertical-course > .cost {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    color: #17aa1c;
+    font-weight: bold;
+    font-size: 16px;
 }

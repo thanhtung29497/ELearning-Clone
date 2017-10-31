@@ -285,7 +285,7 @@ body a:visited {
     left: -37px;
 }
 
-.course-panel {
+.home-page .course-panel {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -294,7 +294,7 @@ body a:visited {
     padding: 0 10%;
 }
 
-.course-panel .title {
+.home-page .course-panel .title {
     font-size: 25px;
     width: 100%;
     padding: 0 20px 20px;
@@ -306,7 +306,7 @@ body a:visited {
     font-weight: 600;
 }
 
-.course-panel .courses {
+.home-page .course-panel .courses {
     display: flex;
     flex-direction: row;
     justify-content: center;

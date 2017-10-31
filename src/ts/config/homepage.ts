@@ -1,19 +1,12 @@
+import { common } from "./common";
+
 export const config = {
-    menu: {
-        home: "Home",
-        courses: "Courses",
-        purchase: "Purchases",
-        feedback: "Feedback"
-    },
+    menu: common.navigations,
     introduction: {
         large: "Change the way you learn.",
         small: "Easier. More effective. More interactive.",
     },
-    categories: [
-        "Foreign Language",
-        "Information & Technology",
-        "Electronics & Telecomunications",
-    ],
+    categories: common.categories,
     features: [{
         image: "resources/images/homepage/effectiveness-gray.png",
         title: "effectiveness",

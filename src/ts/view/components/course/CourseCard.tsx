@@ -2,7 +2,7 @@ import React = require("react");
 import { ICourse } from "../../../model/Course";
 import { StarRating } from "./StarRating";
 
-export class Course extends React.Component<{ course: ICourse }, {}> {
+export class CourseCard extends React.Component<{ course: ICourse }, {}> {
     render() {
         let course = this.props.course;
         return <div className="course">
@@ -11,7 +11,7 @@ export class Course extends React.Component<{ course: ICourse }, {}> {
             </div>
             <div className="content">
                 <div className="name">{course.name}</div>
-                <div className="badget">
+                <div className="badges">
                     <div className="cost">
                         {course.cost === 0 ? "Free" : course.cost}
                     </div>

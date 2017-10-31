@@ -1,5 +1,6 @@
 import React = require("react");
 import utils = require("../../../utils");
+import { Link } from "react-router-dom";
 
 export class Menu extends React.Component<{ isOpen: boolean, onClose?: () => void }, { isOpen: boolean }> {
 
@@ -34,8 +35,16 @@ export class Menu extends React.Component<{ isOpen: boolean, onClose?: () => voi
     }
 }
 
-export const MenuItem = (props: { title: string, onClick?: () => void }) => {
-    return <span onClick={props.onClick}>
-        {props.title}
-    </span>
+export const MenuItem = (props: { title: string, path?: string, onClick?: () => void }) => {
+    if (props.path) {
+        return <Link to={props.path}>
+            <div>
+                {props.title}
+            </div>
+        </Link>
+    } else {
+        return <span onClick={props.onClick}>
+            {props.title}
+        </span>
+    }
 }

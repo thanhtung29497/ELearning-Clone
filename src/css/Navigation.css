@@ -156,7 +156,7 @@ body {
     position: relative;
 }
 
-.side-bar .item .header:hover {
+.side-bar .item .header:hover, .side-bar .item.active .header {
     color: #C9C7EF;
 }
 
@@ -204,7 +204,7 @@ body {
     transform: rotate(90deg);
 }
 
-.side-bar .group > .title.link:hover {
+.side-bar .group > .title.link:hover, .side-bar .group > .title.active {
     color: #C9C7EF;
 }
 
