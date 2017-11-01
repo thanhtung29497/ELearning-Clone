@@ -1,6 +1,10 @@
 import React = require("react");
 import { Menu } from "../menu/Menu";
 
+/**
+ * Button to open/close Menu
+ */
+
 export class MenuButton extends React.Component<{}, { open: boolean }> {
 
     constructor() {

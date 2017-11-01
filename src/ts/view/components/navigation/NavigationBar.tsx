@@ -3,6 +3,13 @@ import React = require("react");
 import utils = require("../../../utils");
 import { Link } from "react-router-dom";
 
+/**
+ * Manage links by keys (index of items in array)
+ * @param className: Custom CSS
+ * @param onChangeKey: function to be called when user click on an item
+ * @param defaultKey: default index of item to be chosen
+ */
+
 export class NavigationBar extends React.Component<{
     className?: string,
     onChangeKey?: (key: number) => void,

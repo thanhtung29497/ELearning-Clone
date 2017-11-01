@@ -11,9 +11,11 @@ export class Dashboard extends React.Component<{}, {}> {
             <TitlePanel title={"Courses"} />
             <div className="body">
                 <div className="tag-panel">
-                    {configs.categories.map((category, index) => {
-                        return <Tag {...category} key={index} />
-                    })}
+                    {
+                        configs.categories.map((category, index) => {
+                            return <Tag {...category} key={index} />
+                        })
+                    }
                 </div>
                 <CoursePanel courses={courses} title="Popular Courses" />
                 {

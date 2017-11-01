@@ -2,6 +2,9 @@ import React = require("react");
 import utils = require("../../../utils");
 import { Link } from "react-router-dom";
 
+/**
+ * Dropdown Menu
+ */
 export class Menu extends React.Component<{ isOpen: boolean, onClose?: () => void }, { isOpen: boolean }> {
 
     constructor() {
